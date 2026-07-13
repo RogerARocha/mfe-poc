@@ -6,7 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:shared": "ng build shared-ui",
+    "start:all": "npx lerna run start --parallel",
+    "build:all": "npm run build:shared && npx lerna run build"
   },
   "private": true,
   "packageManager": "npm@11.13.0",

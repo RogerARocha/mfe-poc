@@ -1,1 +1,11 @@
-<p>card works!</p>
+<div class="mfe-card">
+  <div class="mfe-card-header">
+    <ng-content select="[card-title]"></ng-content>
+  </div>
+  <div class="mfe-card-body">
+    <ng-content></ng-content>
+  </div>
+  <div class="mfe-card-footer">
+    <ng-content select="[card-footer]"></ng-content>
+  </div>
+</div>
