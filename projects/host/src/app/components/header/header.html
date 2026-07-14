@@ -1,7 +1,7 @@
 <header class="app-header">
   <nav class="header-nav">
-    <a href="http://localhost:4200" class="nav-link active">Host Portal</a>
-    <a href="http://localhost:4201" class="nav-link">Finance</a>
-    <a href="http://localhost:4202" class="nav-link">HR</a>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">Host Portal</a>
+    <a routerLink="/finance" routerLinkActive="active" class="nav-link">Finance</a>
+    <a routerLink="/hr" routerLinkActive="active" class="nav-link">HR</a>
   </nav>
 </header>

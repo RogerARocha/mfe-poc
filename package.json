@@ -9,7 +9,8 @@
     "test": "ng test",
     "build:shared": "ng build shared-ui",
     "start:all": "npx lerna run start --parallel",
-    "build:all": "npm run build:shared && npx lerna run build"
+    "build:all": "npm run build:shared && npx lerna run build",
+    "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
   },
   "private": true,
   "packageManager": "npm@11.13.0",
@@ -17,6 +18,7 @@
     "projects/*"
   ],
   "dependencies": {
+    "@angular-architects/module-federation": "^21.2.2",
     "@angular/common": "^21.2.0",
     "@angular/compiler": "^21.2.0",
     "@angular/core": "^21.2.0",
@@ -27,12 +29,14 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^21.2.18",
     "@angular/build": "^21.2.19",
     "@angular/cli": "^21.2.18",
     "@angular/compiler-cli": "^21.2.0",
     "jsdom": "^28.0.0",
     "lerna": "^9.0.7",
     "ng-packagr": "^21.2.0",
+    "ngx-build-plus": "^20.0.0",
     "prettier": "^3.8.1",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"

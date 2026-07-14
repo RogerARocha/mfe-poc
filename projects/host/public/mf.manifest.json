@@ -1,0 +1,4 @@
+{
+  "finance": "http://localhost:4201/remoteEntry.js",
+  "hr": "http://localhost:4202/remoteEntry.js"
+}

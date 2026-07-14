@@ -18,18 +18,23 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular/build:application",
+          "builder": "@angular-architects/module-federation:build",
           "options": {
-            "browser": "projects/host/src/main.ts",
+            "outputPath": "dist/host",
             "tsConfig": "projects/host/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/host/public"
+                "input": "projects/host/public",
+                "output": "."
               }
             ],
-            "styles": ["projects/host/src/styles.scss"]
+            "styles": ["projects/host/src/styles.scss"],
+            "main": "projects/host/src/main.ts",
+            "index": "projects\\host\\src\\index.html",
+            "extraWebpackConfig": "projects/host/webpack.config.js",
+            "commonChunk": false
           },
           "configurations": {
             "production": {
@@ -45,7 +50,8 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "extraWebpackConfig": "projects/host/webpack.prod.config.js"
             },
             "development": {
               "optimization": false,
@@ -56,16 +62,22 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular/build:dev-server",
+          "builder": "ngx-build-plus:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "host:build:production"
+              "buildTarget": "host:build:production",
+              "extraWebpackConfig": "projects/host/webpack.prod.config.js"
             },
             "development": {
               "buildTarget": "host:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 4200,
+            "publicHost": "http://localhost:4200",
+            "extraWebpackConfig": "projects/host/webpack.config.js"
+          }
         },
         "test": {
           "builder": "@angular/build:unit-test"
@@ -84,18 +96,23 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular/build:application",
+          "builder": "ngx-build-plus:browser",
           "options": {
-            "browser": "projects/finance/src/main.ts",
+            "outputPath": "dist/finance",
+            "main": "projects/finance/src/main.ts",
             "tsConfig": "projects/finance/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/finance/public"
+                "input": "projects/finance/public",
+                "output": "."
               }
             ],
-            "styles": ["projects/finance/src/styles.scss"]
+            "styles": ["projects/finance/src/styles.scss"],
+            "index": "projects\\finance\\src\\index.html",
+            "extraWebpackConfig": "projects/finance/webpack.config.js",
+            "commonChunk": false
           },
           "configurations": {
             "production": {
@@ -111,7 +128,8 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "extraWebpackConfig": "projects/finance/webpack.prod.config.js"
             },
             "development": {
               "optimization": false,
@@ -122,16 +140,25 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular/build:dev-server",
+          "builder": "ngx-build-plus:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "finance:build:production"
+              "buildTarget": "finance:build:production",
+              "extraWebpackConfig": "projects/finance/webpack.prod.config.js"
             },
             "development": {
               "buildTarget": "finance:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 4201,
+            "headers": {
+              "Access-Control-Allow-Origin": "http://localhost:4200"
+            },
+            "publicHost": "http://localhost:4201",
+            "extraWebpackConfig": "projects/finance/webpack.config.js"
+          }
         },
         "test": {
           "builder": "@angular/build:unit-test"
@@ -150,18 +177,23 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular/build:application",
+          "builder": "ngx-build-plus:browser",
           "options": {
-            "browser": "projects/hr/src/main.ts",
+            "outputPath": "dist/hr",
             "tsConfig": "projects/hr/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/hr/public"
+                "input": "projects/hr/public",
+                "output": "."
               }
             ],
-            "styles": ["projects/hr/src/styles.scss"]
+            "styles": ["projects/hr/src/styles.scss"],
+            "main": "projects/hr/src/main.ts",
+            "index": "projects\\hr\\src\\index.html",
+            "extraWebpackConfig": "projects/hr/webpack.config.js",
+            "commonChunk": false
           },
           "configurations": {
             "production": {
@@ -177,7 +209,8 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "extraWebpackConfig": "projects/hr/webpack.prod.config.js"
             },
             "development": {
               "optimization": false,
@@ -188,16 +221,25 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular/build:dev-server",
+          "builder": "ngx-build-plus:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "hr:build:production"
+              "buildTarget": "hr:build:production",
+              "extraWebpackConfig": "projects/hr/webpack.prod.config.js"
             },
             "development": {
               "buildTarget": "hr:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 4202,
+            "headers": {
+              "Access-Control-Allow-Origin": "http://localhost:4200"
+            },
+            "publicHost": "http://localhost:4202",
+            "extraWebpackConfig": "projects/hr/webpack.config.js"
+          }
         },
         "test": {
           "builder": "@angular/build:unit-test"
