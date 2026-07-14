@@ -1,0 +1,22 @@
+.header-nav {
+  display: flex;
+  gap: 20px;
+  padding: 15px 0;
+  border-bottom: 1px solid #000000;
+  margin-bottom: 25px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #0080ff;
+  font-size: 20px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.nav-link.active {
+  font-weight: bold;
+  color: #333333;
+}
