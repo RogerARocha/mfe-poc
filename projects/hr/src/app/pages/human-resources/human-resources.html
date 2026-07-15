@@ -1,0 +1,45 @@
+<main class="app-main">
+  <section class="hero-section">
+    <h2 class="hero-title">Human Resources</h2>
+    <p class="hero-subtitle">
+      HR Microfrontend. Sourcing shared components directly from design system.
+    </p>
+  </section>
+
+  <section class="team-list">
+    <h3>Team Members</h3>
+    <lib-list>
+      @for (person of employees; track person.name) {
+        <div class="mfe-list-item">
+          <div class="mfe-list-item-meta">
+            <span class="mfe-list-item-title">{{ person.name }}</span>
+            <span class="mfe-list-item-subtitle">{{ person.role }}</span>
+          </div>
+          <div class="mfe-list-item-value">{{ person.department }}</div>
+        </div>
+      }
+    </lib-list>
+  </section>
+
+  <section class="card-grid">
+    <lib-card>
+      <h3 card-title>Global Headcount</h3>
+      <div class="card-content">
+        <p>1,280 Employees</p>
+      </div>
+      <div card-footer>
+        <lib-button>View Org Chart</lib-button>
+      </div>
+    </lib-card>
+
+    <lib-card>
+      <h3 card-title>Active Openings</h3>
+      <div class="card-content">
+        <p>24 Positions</p>
+      </div>
+      <div card-footer>
+        <lib-button>Manage Openings</lib-button>
+      </div>
+    </lib-card>
+  </section>
+</main>
