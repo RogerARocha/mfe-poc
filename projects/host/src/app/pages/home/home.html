@@ -1,36 +1,102 @@
 <main class="app-main">
   <section class="hero-section">
-    <h2 class="hero-title">Enterprise Microfrontends Orchestration</h2>
+    <h2 class="hero-title">Fury Tide Operations</h2>
     <p class="hero-subtitle">
-      Proof of Concept built using <strong>Angular</strong> and <strong>Lerna</strong> monorepo workspace.
+      Real-time portal for independent fishermen.
     </p>
   </section>
 
-  <section class="card-grid">
-    <lib-card>
-      <h3 card-title>Finance</h3>
-      <div class="card-content">
-        <p>Contains financial ledgers, invoice processing, operating margins, cash flow diagrams, and budget
-          allocations.</p>
+  <div class="main-content">
+
+    <lib-card class="home-card">
+      <div card-title class="card-header-wrapper">
+        <div class="card-title-left">
+          <span class="card-subtitle">Maritime Status</span>
+          <div class="card-title-main">
+            <h2 class="card-title">Tide and Weather</h2>
+          </div>
+        </div>
+        <div class="badge-live">
+          LIVE FROM: BARRA DE RECIFE
+        </div>
       </div>
+
+      <div class="card-stats-grid">
+        <div class="stat-box highlight-border">
+          <p class="stat-label">NEXT PEAK</p>
+          <p class="stat-value">HIGH TIDE</p>
+          <p class="stat-number color-primary">1.4m <span class="stat-sub">@ 14:32</span></p>
+        </div>
+
+        <div class="stat-box">
+          <p class="stat-label">CURRENT WIND</p>
+          <p class="stat-value">SE 18 KTS</p>
+          <p class="stat-number color-secondary">Moderate</p>
+        </div>
+
+        <div class="stat-box">
+          <p class="stat-label">CONDITION</p>
+          <div class="condition-wrapper">
+            <span class="symbol-icon-large">⛅</span>
+            <p class="stat-value">24°C</p>
+          </div>
+          <p class="stat-sub-info">Visibility: 12nm</p>
+        </div>
+      </div>
+
       <div card-footer>
-        <a href="/finance" class="btn-link btn-finance">
-          <lib-button>Go to Finance ></lib-button>
-        </a>
+        <lib-button>View Details</lib-button>
       </div>
     </lib-card>
 
-    <lib-card>
-      <h3 card-title>Human Resources</h3>
-      <div class="card-content">
-        <p>Maintains employee directories, department headcounts, active job listings, payroll metadata, and talent
-          workflows.</p>
+    <lib-card class="home-card">
+      <div card-title class="card-header-wrapper">
+        <div class="card-title-left">
+          <span class="card-subtitle">Market Watch</span>
+          <div class="card-title-main">
+            <h2 class="card-title">Fishgiiiiiiiiiiiiiiiiii Prices</h2>
+          </div>
+        </div>
+        <div class="badge-live highlight">
+          LIVE PRICES
+        </div>
       </div>
+
+      <lib-list>
+        <div class="mfe-list-item">
+          <div class="mfe-list-item-meta">
+            <span class="mfe-list-item-title">Corvina</span>
+          </div>
+          <span class="mfe-list-item-value">$ 18.00 / kg</span>
+        </div>
+        <div class="mfe-list-item">
+          <div class="mfe-list-item-meta">
+            <span class="mfe-list-item-title">Tainha</span>
+          </div>
+          <span class="mfe-list-item-value">$ 22.00 / kg</span>
+        </div>
+        <div class="mfe-list-item">
+          <div class="mfe-list-item-meta">
+            <span class="mfe-list-item-title">Anchova</span>
+          </div>
+          <span class="mfe-list-item-value">$ 24.00 / kg</span>
+        </div>
+        <div class="mfe-list-item">
+          <div class="mfe-list-item-meta">
+            <span class="mfe-list-item-title">Camarão</span>
+          </div>
+          <span class="mfe-list-item-value">$ 38.00 / kg</span>
+        </div>
+        <div class="mfe-list-item">
+          <div class="mfe-list-item-meta">
+            <span class="mfe-list-item-title">Sardinha</span>
+          </div>
+          <span class="mfe-list-item-value">$ 16.00 / kg</span>
+        </div>
+      </lib-list>
       <div card-footer>
-        <a href="/hr" class="btn-link btn-hr">
-          <lib-button>Go to HR ></lib-button>
-        </a>
+        <lib-button>View More</lib-button>
       </div>
     </lib-card>
-  </section>
+  </div>
 </main>

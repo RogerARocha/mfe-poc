@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Button, Card } from 'shared-ui';
+import { Card, List, Button } from 'shared-ui';
 
 @Component({
   selector: 'app-home',
-  imports: [Button, Card],
+  imports: [Card, List, Button],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

@@ -27,3 +27,4 @@ Changing shared components, some visual bug after I change that.
 
 Starting the ui for the host/home page, the ideia its to be like a portal with infos
 
+some issues creating the grid
