@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Colors */
+  --color-primary: #0A2540;        /* Marine Blue */
+  --color-primary-light: #16365C;  /* Lighter Marine Blue */
+  --color-primary-dark: #051321;   /* Darker Marine Blue */
+  --color-accent: #00D4B2;         /* Seafoam Turquoise */
+  --color-white: #FFFFFF;
+  --color-bg: #F8FAFC;            /* Clean light gray background */
+  --color-border: #E2E8F0;         /* Slate light border */
+  --color-text-dark: #1E293B;      /* Slate dark text */
+  --color-text-muted: #64748B;     /* Slate muted text */
+
+  --font-family: 'Inter';
+
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text-dark);
+  padding-top: 64px;
+  min-height: 100vh;
+}

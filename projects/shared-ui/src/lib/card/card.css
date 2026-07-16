@@ -1,0 +1,46 @@
+.mfe-card {
+  background-color: var(--color-white, #ffffff);
+  border: 1px solid var(--color-border, #E2E8F0);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(10, 37, 64, 0.05), 0 2px 4px -1px rgba(10, 37, 64, 0.03);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.mfe-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(10, 37, 64, 0.08), 0 4px 6px -2px rgba(10, 37, 64, 0.04);
+  transform: translateY(-2px);
+}
+
+.mfe-card-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--color-border, #E2E8F0);
+}
+
+.mfe-card-header ::ng-deep h1,
+.mfe-card-header ::ng-deep h2,
+.mfe-card-header ::ng-deep h3,
+.mfe-card-header ::ng-deep h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary, #0A2540);
+}
+
+.mfe-card-body {
+  padding: 24px;
+  flex-grow: 1;
+  font-size: 14px;
+  color: var(--color-text-dark, #1E293B);
+  line-height: 1.5;
+}
+
+.mfe-card-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--color-border, #E2E8F0);
+  background-color: var(--color-bg, #F8FAFC);
+  display: flex;
+  justify-content: flex-end;
+}

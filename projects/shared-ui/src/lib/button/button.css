@@ -1,0 +1,18 @@
+.mfe-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary, #0A2540);
+  color: var(--color-white, #ffffff);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.mfe-btn:hover {
+  background-color: var(--color-primary-light, #16365C);
+}
