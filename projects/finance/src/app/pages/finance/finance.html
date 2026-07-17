@@ -2,29 +2,66 @@
   <section class="hero-section">
     <h2 class="hero-title">Financial Control Panel</h2>
     <p class="hero-subtitle">
-      Finance Microfrontend. Sourcing shared components directly from design system.
+      Fury Tide operations. Live transaction ledger and operational expense distributions.
     </p>
   </section>
 
-  <section class="card-grid">
+  <section class="stats-grid">
     <lib-card>
-      <h3 card-title>Annual Recurring Revenue</h3>
-      <div class="card-content">
-        <p>$12,482,900</p>
+      <div card-title class="card-header-wrapper">
+        <span class="card-subtitle">Revenue Stream</span>
+        <h3 class="card-title-text">Total Sales</h3>
       </div>
-      <div card-footer>
-        <lib-button>Export Sheet</lib-button>
+      <div class="card-content font-highlight color-sale">
+        R$ {{ totalSales() | number:'1.2-2' }}
       </div>
     </lib-card>
 
     <lib-card>
-      <h3 card-title>Operating Expenses</h3>
-      <div class="card-content">
-        <p>$8,230,400</p>
+      <div card-title class="card-header-wrapper">
+        <span class="card-subtitle font-cost">Vessel Outlays</span>
+        <h3 class="card-title-text">Operational Costs</h3>
       </div>
-      <div card-footer>
-        <lib-button>View Invoice Ledger</lib-button>
+      <div class="card-content font-highlight color-cost">
+        R$ {{ operationalCosts() | number:'1.2-2' }}
+      </div>
+    </lib-card>
+  </section>
+
+  <!--ledger Section -->
+  <section class="ledger-container">
+    <lib-card>
+      <div card-title class="card-header-wrapper flex-row">
+        <div>
+          <h2 class="card-title">All Entries</h2>
+          <p class="card-subtitle-sub text-muted">Historical sales and cost logs for this period</p>
+        </div>
+        <div class="badge-status">
+          ACTIVE PERIOD
+        </div>
+      </div>
+      
+
+      <div class="ledger-list-wrapper">
+        <lib-list>
+          @for (item of transactions(); track item.name) {
+            <div class="mfe-list-item">
+              <div class="mfe-list-item-meta">
+                <span class="mfe-list-item-title">{{ item.name }}</span>
+                <span class="mfe-list-item-subtitle">{{ item.category }}</span>
+              </div>
+              <div 
+                class="mfe-list-item-value ledger-value"
+                [class.value-sale]="item.type === 'sale'"
+                [class.value-cost]="item.type === 'cost'"
+              >
+                {{ item.type === 'sale' ? '+' : '-' }} R$ {{ item.value | number:'1.2-2' }}
+              </div>
+            </div>
+          }
+        </lib-list>
       </div>
     </lib-card>
   </section>
 </main>
+
