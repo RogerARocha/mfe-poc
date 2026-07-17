@@ -1,0 +1,149 @@
+.app-main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 48px;
+
+  .hero-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+}
+
+.roster-container {
+  width: 100%;
+}
+
+.card-header-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.card-subtitle-text {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.distribution-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.distribution-title-caps {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  letter-spacing: 1.2px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.maintenance-item {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-bottom: 1px solid var(--color-primary-dark);
+
+  .mfe-list-item-title {
+    color: var(--color-white);
+    font-weight: 700;
+  }
+
+  .text-white-muted {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+  }
+
+  &:hover {
+    background-color: var(--color-primary-light) !important;
+  }
+}
+
+.flex-items {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.role-badge {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  margin-left: 6px;
+}
+
+.share-display-container {
+  background-color: rgba(0, 212, 178, 0.15);
+  padding: 6px 16px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 68px;
+}
+
+.share-percentage-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.share-input-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.share-input {
+  width: 64px;
+  text-align: center;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

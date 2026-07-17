@@ -1,45 +1,62 @@
 <main class="app-main">
   <section class="hero-section">
-    <h2 class="hero-title">Human Resources</h2>
+    <h2 class="hero-title">Crew Management</h2>
     <p class="hero-subtitle">
-      HR Microfrontend. Sourcing shared components directly from design system.
+      Manage active crew members, designations, and profit distribution allocations.
     </p>
   </section>
 
-  <section class="team-list">
-    <h3>Team Members</h3>
-    <lib-list>
-      @for (person of employees; track person.name) {
-        <div class="mfe-list-item">
-          <div class="mfe-list-item-meta">
-            <span class="mfe-list-item-title">{{ person.name }}</span>
-            <span class="mfe-list-item-subtitle">{{ person.role }}</span>
-          </div>
-          <div class="mfe-list-item-value">{{ person.department }}</div>
+  <section class="roster-container">
+    <lib-card>
+      <div card-title class="card-header-wrapper">
+        <div>
+          <h2 class="card-title">Profit Distribution and Crew Roster</h2>
+          <p class="card-subtitle-text">Manage shares for the current vessel voyage</p>
         </div>
-      }
-    </lib-list>
-  </section>
+      </div>
 
-  <section class="card-grid">
-    <lib-card>
-      <h3 card-title>Global Headcount</h3>
-      <div class="card-content">
-        <p>1,280 Employees</p>
+      <div class="distribution-list">
+        <h3 class="distribution-title-caps">Profit Shares</h3>
+        
+        <lib-list>
+          <div class="mfe-list-item maintenance-item">
+            <div class="mfe-list-item-meta">
+              <span class="mfe-list-item-title">
+                Boat Maintenance
+              </span>
+              <span class="mfe-list-item-subtitle text-white-muted">Fixed Vessel Operating Allocation</span>
+            </div>
+            <div class="share-display-container">
+              <span class="share-percentage-value">{{ boatMaintenanceShare }}%</span>
+            </div>
+          </div>
+
+          <!-- Dynamic Crew Members -->
+          @for (member of crew; track member.name) {
+            <div class="mfe-list-item">
+              <div class="mfe-list-item-meta">
+                <span class="mfe-list-item-title">
+                  {{ member.name }} <span class="role-badge">({{ member.role }})</span>
+                </span>
+                <span class="mfe-list-item-subtitle">{{ member.type }}</span>
+              </div>
+              <div class="share-input-container">
+                <input 
+                  type="number" 
+                  class="share-input" 
+                  [value]="member.share" 
+                  min="0" 
+                  max="100" 
+                />
+                <span class="share-symbol">%</span>
+              </div>
+            </div>
+          }
+        </lib-list>
       </div>
       <div card-footer>
-        <lib-button>View Org Chart</lib-button>
+        <lib-button>Add Crew Member </lib-button>
       </div>
-    </lib-card>
-
-    <lib-card>
-      <h3 card-title>Active Openings</h3>
-      <div class="card-content">
-        <p>24 Positions</p>
-      </div>
-      <div card-footer>
-        <lib-button>Manage Openings</lib-button>
-      </div>
-    </lib-card>
+    </lib-card>  
   </section>
 </main>

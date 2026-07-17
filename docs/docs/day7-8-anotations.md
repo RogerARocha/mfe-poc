@@ -28,3 +28,9 @@ Changing shared components, some visual bug after I change that.
 Starting the ui for the host/home page, the ideia its to be like a portal with infos
 
 some issues creating the grid
+
+## Doubt
+
+About styles, how it's the better way to share styles?
+
+I created a shared-ui lib, but it's just some components. And for the microfrontends pages, that tecnically cant see the styls from the host.
