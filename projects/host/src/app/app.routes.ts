@@ -6,20 +6,34 @@ export const routes: Routes = [
   { path: '', component: Home },
   {
     path: 'finance',
-    loadChildren: () =>
+    loadComponent: () =>
       loadRemoteModule({
         type: 'manifest',
         remoteName: 'finance',
-        exposedModule: './routes'
-      }).then((m) => m.routes)
+        exposedModule: './ComponentFinanceMain'
+      }).then((m) => m.Finance)
   },
   {
     path: 'hr',
-    loadChildren: () =>
-      loadRemoteModule({
-        type: 'manifest',
-        remoteName: 'hr',
-        exposedModule: './routes'
-      }).then((m) => m.routes)
+    children: [
+      {
+        path: '',
+        loadComponent: () =>
+          loadRemoteModule({
+            type: 'manifest',
+            remoteName: 'hr',
+            exposedModule: './ComponentHRMain'
+          }).then((m) => m.HumanResources)
+      },
+      // {
+      //   path: 'member/:id',
+      //   loadComponent: () =>
+      //     loadRemoteModule({
+      //       type: 'manifest',
+      //       remoteName: 'hr',
+      //       exposedModule: './MemberDetails'
+      //     }).then((m) => m.MemberDetails)
+      // }
+    ]
   }
 ];

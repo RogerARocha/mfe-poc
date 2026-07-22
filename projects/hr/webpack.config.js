@@ -8,7 +8,8 @@ module.exports = withModuleFederationPlugin({
   name: 'hr',
 
   exposes: {
-    './routes': './projects/hr/src/app/app.routes.ts'
+    './ComponentHRMain': './projects/hr/src/app/pages/human-resources/human-resources.ts',
+    './MemberDetails': './projects/hr/src/app/pages/member-details/member-details.ts'
   },
 
   shared: {

@@ -8,8 +8,7 @@ module.exports = withModuleFederationPlugin({
   name: 'finance',
 
   exposes: {
-    
-    './routes': './projects/finance/src/app/app.routes.ts',
+    './ComponentFinanceMain': './projects/finance/src/app/pages/finance/finance.ts',
   },
 
   shared: {
