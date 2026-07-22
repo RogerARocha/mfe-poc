@@ -1,0 +1,24 @@
+<main class="app-main">
+  <lib-card>
+    <div card-title>
+      <h2>Crew Member Details</h2>
+    </div>
+    
+    @if (member) {
+      <div class="member-details-body">
+        <p><strong>Name:</strong> {{ member.name }}</p>
+        <p><strong>Role:</strong> {{ member.role }}</p>
+        <p><strong>Designation:</strong> {{ member.type }}</p>
+        <p><strong>Vessel Profit Share:</strong> {{ member.share }}%</p>
+      </div>
+    } @else {
+      <p>Crew member not found.</p>
+    }
+
+    <div card-footer>
+      <a [routerLink]="['/hr']">
+        <lib-button>Back</lib-button>
+      </a>
+    </div>
+  </lib-card>
+</main>
